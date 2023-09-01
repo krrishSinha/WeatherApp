@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./media.css">
+</head>
+<body>
+    <div id="wrapper">
+
+        <div class="container">
+
+            <h1>WEATHER APP</h1>
+
+            <div class="tab_container">
+                <div class="tab" data-userDataTab>Your Weather</div>
+                <div class="tab" data-searchDataTab>Search Weather</div>
+            </div>
+
+            <div class="weather_div">
+
+                <!-- grant location container -->
+                <div class="grant_location_container active">
+                    <img src="./location.png" alt="location img" loading="lazy">
+                    <h2>Grant Location Access</h2>
+                    <p>Allow Access to get weather information</p>
+                    <button class="grant_btn" data-grantBtn>Grant Access</button>
+                </div>
+
+                <!-- search input div -->
+                <form action="" class="form_container" data-searchForm>
+                    <div>
+                        <input type="text" placeholder="Search for City..." data-searchinput>
+                        <button class="searchBtn">Search</button>
+                    </div>
+                </form>
+
+                <!-- 404 container  -->
+                <div class="not_found_div">
+                    <img src="./images/not-found.png" alt="">
+                    <p>City not found...</p>
+                </div>
+
+                <!-- loading screen container -->
+                <div class="loading_container">
+                    <img src="./images/loading.gif" alt="loading_gif">
+                    <!-- <p>loading...</p> -->
+                </div>
+
+
+                <!-- main weather info div  -->
+                <div class="weather_info_container">
+                    <div class="city_div" >
+                        <h2 data-cityName></h2>
+                        <img src="" alt="flag" data-countryIcon>
+                    </div>
+
+                    <p data-weatherDesc></p>
+
+                    <img src="" data-weatherDescIcon alt="Haze Img">
+
+                    <h2 data-temp></h2>
+
+                    <div class="extra_info_div">
+
+                        <div class="extra_div windspeed_div">
+                            <img src="./images/wind.png" alt="">
+                            <h2>WINDSPEED</h2>
+                            <p data-windspeed></p>
+                        </div>
+
+                        <div class="extra_div humidity_div">
+                            <img src="./images/humidity.png" alt="">
+                            <h2>HUMIDITY</h2>
+                            <p data-humidity></p>
+                        </div>
+
+                        <div class="extra_div clouds_div">
+                            <img src="./images/cloud.png" alt="">
+                            <h2>CLOUDS</h2>
+                            <p data-clouds></p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

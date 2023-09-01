@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Poppins', sans-serif;
+    /* font-size: 62.5%; */
+}
+
+#wrapper{
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 3rem;
+    background: linear-gradient(90deg, rgba(24, 24, 125, 1) 1%, rgba(16, 47, 171, 0.98) 100%);
+    color: whitesmoke;
+}
+
+h1{
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.tab_container{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0 1rem;
+    width: 400px;
+    margin: 1rem auto;
+}
+
+.tab{
+    cursor: pointer;
+    padding: .6rem .7rem;
+    border-radius: 5px;
+}
+
+.tab.current-tab{
+    /* background-color: black; */
+    background: linear-gradient(90deg, rgba(130, 130, 145, 1) 1%, rgba(121, 127, 152, 0.98) 100%);
+    color: whitesmoke;
+}
+
+.grant_location_container{
+    margin-top: 2rem;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grant_location_container.active{
+    display: flex;
+}
+
+.grant_location_container img{
+    margin: 1rem 0;
+    width: 45px;
+}
+
+.grant_location_container p {
+    margin: 1rem 0 1.3rem 0;
+}
+
+.grant_location_container .grant_btn{
+    all: unset;
+    border-radius: 5px;
+    padding: .7rem 1rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(130, 130, 145, 1) 1%, rgba(121, 127, 152, 0.98) 100%);
+}
+
+.weather_info_container{
+    /* border: 2px solid black; */
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 1rem; */
+    margin-top: 2.5rem;
+}
+
+.weather_info_container.active{
+    display: flex;
+}
+
+.city_div{
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.city_div img{
+    width: 20px;
+}
+
+.city_div [data-cityName]{
+    font-size: 1.5rem;
+    /* text-align: center; */
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+[data-weatherDesc]{
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: .7rem;
+}
+
+[data-weatherDescIcon]{
+    margin-bottom: .5rem;
+}
+
+.extra_info_div{
+    margin-top: 2rem;
+    display: flex;
+    /* border: 2px solid red; */
+    gap: 1rem;
+}
+
+.extra_div{
+    /* border: 1px solid whitesmoke; */
+    background: linear-gradient(90deg, rgba(130, 130, 145, 1) 1%, rgba(121, 127, 152, 0.98) 100%);
+    border-radius: 5px;
+    width: 180px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+.extra_div h2{
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.extra_div img{
+    width: 50px;
+    height: 50px;
+}
+
+
+/* LOADING  */
+.loading_container{
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 2px solid red; */
+}
+
+.loading_container.active{
+    display: flex;
+}
+
+.loading_container p{
+    text-align: center;
+}
+
+.loading_container img{
+    width: 150px;
+}
+
+
+/* SEARCH FORM  */
+
+.form_container{
+    display: none;
+    margin-top: 1.5rem;
+}
+
+.form_container.active{
+    display: block;
+}
+
+.form_container div{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    gap: .5rem;
+}
+
+
+.form_container input{
+    /* width: 25%; */
+    padding: .8rem .7rem;
+    background: linear-gradient(90deg, rgba(130, 130, 145, 1) 1%, rgba(121, 127, 152, 0.98) 100%);
+    border: none;
+    font-size: 1rem;
+    color: whitesmoke;
+    outline: none;
+    border-radius: 5px;
+}
+
+.form_container input::placeholder{
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+.form_container button{
+    cursor: pointer;
+    padding: .8rem;
+    background: linear-gradient(90deg, rgba(130, 130, 145, 1) 1%, rgba(121, 127, 152, 0.98) 100%);
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.not_found_div{
+    margin-top: 4rem;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.not_found_div.active{
+    display: flex;
+}
+
+.not_found_div img{
+    width: 200px;
+}
+
+.not_found_div p{
+    font-size: 1.2rem;
+    font-weight: 600s;
+}
