@@ -53,8 +53,8 @@ const renderWeatherData = (data) => {
 
 const fetchUserWeatherData = async (userCoords) => {
 
-    loadingContainer.classList.add("active")
     try {
+        loadingContainer.classList.add("active")
         currentDataUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
         let res = await fetch(currentDataUrl);
         let data = await res.json();
@@ -96,10 +96,10 @@ const checkCordinates = () => {
         let coords = JSON.parse(StringCoords)
 
         if (coords) {
+            grant_location_container.classList.remove("active")
             lat = coords.lat
             lon = coords.lon
             currentDataUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
-            grant_location_container.classList.remove("active")
             fetchUserWeatherData(coords)
         } else {
             grant_location_container.classList.add('active')
@@ -140,6 +140,7 @@ const handleTab = (e) => {
 
 const showPosition = (position) => {
     // console.log(position.coords);
+    // grant_location_container.classList.remove("active")
     let userCoordinates = {
         lat: position.coords.latitude,
         lon: position.coords.longitude
@@ -149,7 +150,6 @@ const showPosition = (position) => {
     let userCoords = JSON.parse(sessionStorage.getItem("user-coordinates"))
     lat = userCoords.lat
     lon = userCoords.lon
-    grant_location_container.classList.remove("active")
     currentDataUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
     fetchUserWeatherData()
     // console.log(lat);
@@ -159,8 +159,9 @@ const showPosition = (position) => {
 
 const getLocation = () => {
     if (navigator.geolocation) {
+        grant_location_container.classList.remove("active")
+        loadingContainer.classList.add("active")
         navigator.geolocation.getCurrentPosition(showPosition)
-
     } else {
         alert('no support available')
     }
@@ -168,12 +169,12 @@ const getLocation = () => {
 
 const getInputValue = (e) => {
     e.preventDefault();
-    if(searchInput.value){
+    if (searchInput.value) {
         city = searchInput.value
         searchInput.value = ''
         fetchCityWeatherData()
         console.log(city);
-    }else{
+    } else {
         alert("enter city name")
     }
 }
